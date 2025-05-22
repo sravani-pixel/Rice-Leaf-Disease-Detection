@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Disease Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <style>
+        .result-box {
+            text-align: left;
+        }
+        .result-box h3 {
+            margin-top: 15px;
+        }
+        .card, .feedback-card {
+            max-width: 600px;
+        }
+        .button-group {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-box">
+        <div class="card">
+            <h2>Disease: <span class="highlight">{{ prediction }}</span></h2>
+
+            <div class="result-box">
+                <h3>Description:</h3>
+                <ul>
+                    {% for line in recommendation.description %}
+                        <li>{{ line }}</li>
+                    {% endfor %}
+                </ul>
+
+                <h3>Recommended Remedy:</h3>
+                <ul>
+                    {% for line in recommendation.remedy %}
+                        <li>{{ line }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="button-group">
+                <a href="{{ url_for('index') }}" class="predict-btn">Back to Home</a>
+                <a href="{{ url_for('feedback') }}" class="predict-btn">Give Feedback</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

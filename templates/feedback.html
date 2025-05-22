@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Feedback</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <div class="center-box">
+        <div class="card feedback-card">
+            <h2>Feedback</h2>
+            <form method="POST" action="{{ url_for('feedback') }}">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required />
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required />
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="e.g. 9876543210" required />
+
+
+                <label for="feedback">Your Feedback:</label>
+                <textarea name="feedback" id="feedback" rows="4" placeholder="Let us know your thoughts..." required></textarea>
+
+                <button type="submit" class="submit-btn">Submit Feedback</button>
+            </form>
+
+            <a href="{{ url_for('index') }}" class="predict-btn" style="margin-top: 20px;">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

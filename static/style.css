@@ -1,0 +1,174 @@
+/* Full-screen and background setup */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("../static/background.jpg"); /* Use your own path here */
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Centering container */
+.center-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full vertical height */
+}
+
+/* Main card style */
+.card {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Header styles */
+.card h2 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+}
+
+.highlight {
+    color: rgb(55, 169, 20);
+    font-weight: bold;
+}
+
+/* Section titles */
+.card h3 {
+    margin-top: 20px;
+    font-size: 1.2em;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 5px;
+}
+
+/* Bullet list */
+.card ul {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.card ul li {
+    margin-bottom: 8px;
+}
+
+/* Buttons */
+button.predict-btn {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #388e3c;
+}
+
+/* Preview image */
+.preview-image {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    margin-top: 15px;
+}
+
+/* Result box */
+.result-box {
+    margin-top: 20px;
+    padding: 10px;
+    border-left: 4px solid green;
+    background-color: #f9fff9;
+}
+
+/* Progress bar */
+.progress-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: green;
+    border-radius: 5px;
+}
+.feedback-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin: 30px auto;
+    text-align: left;
+    font-family: Arial, sans-serif;
+}
+
+.feedback-card h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+}
+
+.feedback-card label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #444;
+}
+
+.feedback-card input,
+.feedback-card textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.feedback-card input:focus,
+.feedback-card textarea:focus {
+    outline: none;
+    border-color: green;
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.3);
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #388e3c;
+}

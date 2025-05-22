@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Rice Leaf Disease Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+
+    {% if confidence is defined %}
+    <style>
+        .progress-bar {
+            width: {{ confidence }}%;
+        }
+    </style>
+    {% endif %}
+</head>
+<body>
+    <div class="center-box">
+        <div class="card">
+            <h1 style="text-align: center;">
+                Rice Leaf <span style="color:black;">Disease</span> Detection
+            </h1>
+
+            <form method="POST" enctype="multipart/form-data">
+                <label for="file-upload">Upload Image:</label>
+                <input type="file" id="file-upload" name="file" required />
+                <button type="submit" class="predict-btn">Predict</button>
+            </form>
+
+            {% if prediction %}
+                <h2>Prediction: <span class="highlight">{{ prediction }}</span></h2>
+                <div class="timestamp">Predicted at: {{ timestamp }}</div>
+
+                <h4>Confidence: <span class="highlight">{{ confidence | round(2) }}%</span></h4>
+
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+
+                <img src="{{ image_path }}" alt="Uploaded Image" class="preview-image" />
+
+                <!-- NEW: View Details button -->
+                <form action="{{ url_for('details') }}" method="post">
+                    <input type="hidden" name="prediction" value="{{ prediction }}">
+                    <input type="hidden" name="confidence" value="{{ confidence }}">
+                    <button type="submit" class="predict-btn">View Details</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

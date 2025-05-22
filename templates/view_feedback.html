@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Feedback</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Submitted Feedback</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Feedback</th>
+            <th>Submitted At</th>
+        </tr>
+        {% for entry in feedbacks %}
+        <tr>
+            <td>{{ entry.name }}</td>
+            <td>{{ entry.email }}</td>
+            <td>{{ entry.phone }}</td>
+            <td>{{ entry.feedback }}</td>
+            <td>{{ entry.submitted_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
